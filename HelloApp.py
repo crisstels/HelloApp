@@ -10,7 +10,11 @@ app = Flask(__name__)
 def calculator():
     a = request.args.get('a')
     b = request.args.get('b')
-    return render_template('index.html', sum1=a, sum2=b)
+    return render_template('index.html', sum1=a, sum2=b, result=addition(int(a), int(b)))
+
+
+def addition(a, b):
+    return a + b
 
 
 if __name__ == "__main__":

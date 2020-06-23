@@ -7,14 +7,14 @@
 
 <form action="/" method="GET">
 	<input name="a" type="number">
-    <button type="button">+</button>
+    <p>+</p>
   <input name="b" type="number">
   <button type="submit">=</button>
     <p>Result:</p>
 </form>
 
-{% if sum1 and sum2 and %}
-<p>{{sum1 + sum2}}</p>
+{% if sum1 and sum2 %}
+<p>{{result}}</p>
 {% endif %}
 
 </html>
