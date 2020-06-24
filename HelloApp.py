@@ -1,21 +1,32 @@
-'''Simple Calculator web application, which just add up  two numbers'''
-from flask import request
+'''REST Interface to add up two numbers '''
 from flask import Flask
-from flask import render_template
+from flask import request
+from flask_restful import Resource, Api
 
 app = Flask(__name__)
+api = Api(app)
 
 
-@app.route('/')
-def calculator():
-    a = request.args.get('a')
-    b = request.args.get('b')
-    return render_template('index.html', sum1=a, sum2=b, result=addition(int(a), int(b)))
+class HelloWorld(Resource):
+    '''Submits two numbers and the retrieve them back'''
+
+    def get(self, number1):
+        return {'number1': number1}
+
+    def post(self):
+        number1 = request.form['data']
+        return {'number1': number1}
+
+    @staticmethod
+    def get(number2):
+        return {'number2': number2}
+
+    def post(self):
+        number2 = request.form['number']
+        return {'number2': number2}
 
 
-def addition(a, b):
-    return a + b
-
+api.add_resource(HelloWorld, "/")
 
 if __name__ == "__main__":
     app.run(debug=True)
