@@ -1,4 +1,4 @@
-
+'''Simple Calculator web application, which just add up  two numbers'''
 from flask import request
 from flask import Flask
 from flask import render_template
