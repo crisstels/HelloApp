@@ -1,4 +1,7 @@
 '''REST Interface to add up two numbers '''
+# TODO: submit two numbers(POST?)
+# TODO: add up two numbers(PUT?, call method)
+# TODO: retrieve result(GET?)
 from flask import Flask
 from flask import request
 from flask_restful import Resource, Api
