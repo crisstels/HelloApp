@@ -1,4 +1,6 @@
-'''REST Interface to add up two numbers '''
+'''REST Interface to add up two numbers. Use the
+curl -H "Content-Type: application/json" -X POST -d '{"num1": 1, "num2": 1}' http://127.0.01:5000/
+command to test it.'''
 from flask import Flask
 from flask import request
 from flask_restful import Resource, Api
@@ -12,8 +14,8 @@ class Calculator(Resource):
 
     def post(self):
         numbers = request.get_json()
-        return {'number1': numbers['number1'], 'number2': numbers['number2'],
-                'sum': numbers['number1'] + numbers['number2']}
+        return {'number1': numbers['num1'], 'number2': numbers['num2'],
+                'sum': numbers['num1'] + numbers['num2']}
 
 
 api.add_resource(Calculator, "/")
