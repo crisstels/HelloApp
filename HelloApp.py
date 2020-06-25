@@ -1,7 +1,4 @@
 '''REST Interface to add up two numbers '''
-# TODO: submit two numbers(POST?)
-# TODO: add up two numbers(PUT?, call method)
-# TODO: retrieve result(GET?)
 from flask import Flask
 from flask import request
 from flask_restful import Resource, Api
@@ -10,26 +7,16 @@ app = Flask(__name__)
 api = Api(app)
 
 
-class HelloWorld(Resource):
-    '''Submits two numbers and the retrieve them back'''
-
-    def get(self, number1):
-        return {'number1': number1}
+class Calculator(Resource):
+    '''Submits two numbers and returns the sum.'''
 
     def post(self):
-        number1 = request.form['data']
-        return {'number1': number1}
-
-    @staticmethod
-    def get(number2):
-        return {'number2': number2}
-
-    def post(self):
-        number2 = request.form['number']
-        return {'number2': number2}
+        numbers = request.get_json()
+        return {'number1': numbers['number1'], 'number2': numbers['number2'],
+                'sum': numbers['number1'] + numbers['number2']}
 
 
-api.add_resource(HelloWorld, "/")
+api.add_resource(Calculator, "/")
 
 if __name__ == "__main__":
     app.run(debug=True)
