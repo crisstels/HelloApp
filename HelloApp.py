@@ -14,11 +14,10 @@ class Calculator(Resource):
 
     def post(self):
         numbers = request.get_json()
-        return {'number1': numbers['num1'], 'number2': numbers['num2'],
-                'sum': numbers['num1'] + numbers['num2']}
+        return {'sum': numbers['num1'] + numbers['num2']}
 
 
-api.add_resource(Calculator, "/")
+api.add_resource(Calculator, "/sum")
 
 if __name__ == "__main__":
     app.run(debug=True)
