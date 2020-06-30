@@ -20,4 +20,4 @@ class Calculator(Resource):
 api.add_resource(Calculator, "/sum")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
