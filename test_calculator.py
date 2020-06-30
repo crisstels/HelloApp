@@ -27,9 +27,9 @@ class TestCalculator(unittest.TestCase):
         result = calculator.post(input)
         self.assertEqual(output, result)
 
-    def test_Calculator_with_null(self):
+    def test_Calculator_with_none(self):
         calculator = Calculator()
-        output = {'sum': 7}
+        output = {'sum': None}
         input = {'num1': None, 'num2': None}
         result = calculator.post(input)
         self.assertEqual(output, result)
