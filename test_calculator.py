@@ -34,7 +34,7 @@ class TestCalculator(unittest.TestCase):
         calculator = Calculator()
         input = {'num1': None, 'num2': None}
 
-        with self.assertRaises(Exception) as cm:
+        with self.assertRaises(TypeError) as cm:
             calculator.post(input)
 
         self.assertEqual("unsupported operand type(s) for +: 'NoneType' and 'NoneType'",
