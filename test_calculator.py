@@ -32,10 +32,14 @@ class TestCalculator(unittest.TestCase):
 
     def test_Calculator_with_none(self):
         calculator = Calculator()
-        output = {'sum': None}
         input = {'num1': None, 'num2': None}
-        result = calculator.post(input)
-        self.assertEqual(output, result)
+
+        with self.assertRaises(Exception) as cm:
+            calculator.post(input)
+
+        self.assertEqual("unsupported operand type(s) for +: 'NoneType' and 'NoneType'",
+                         str(cm.exception),
+                         "unsupported operand type(s) for +: 'NoneType' and 'NoneType'")
 
 
 if __name__ == "__main__":
