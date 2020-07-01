@@ -7,10 +7,13 @@ from Calc import Calculator
 class TestCalculator(unittest.TestCase):
 
     def test_Calculator(self):
+        # Arrange
         calculator = Calculator()
         output = {'sum': 7}
         input = {'num1': 2, 'num2': 5}
+        # Act
         result = calculator.post(input)
+        # Assert
         self.assertEqual(output, result)
 
     def test_Calculator_with_strings(self):
