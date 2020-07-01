@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name='CalculatorApp',
     version='1.1',
-    packages=['HelloApp'],
+    packages=[''],
     url='',
     license='',
     author='Natalie',
