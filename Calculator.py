@@ -15,7 +15,7 @@ class Calculator(Resource):
     def post(self):
         numbers = request.get_json()
 
-        if not (type(numbers['num1']) is int) and not (type(numbers['num2'] is int)):
+        if not ((type(numbers['num1']) is int) and (type(numbers['num2'] is int))):
             raise TypeError("Only integers are allowed!")
 
         return {'sum': numbers['num1'] + numbers['num2']}
