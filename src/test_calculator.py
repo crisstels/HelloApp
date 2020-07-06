@@ -1,7 +1,7 @@
 ''' Unit test for Calculator.py application'''
 import unittest
 
-from Calc import Calculator
+from src.Calc import Calculator
 
 
 class TestCalculator(unittest.TestCase):
