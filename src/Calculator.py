@@ -12,7 +12,7 @@ api = Api(app)
 class Calculator(Resource):
     '''Submits two numbers and returns the sum.'''
 
-    def post(self):
+    def get(self):
         numbers = request.get_json()
 
         if not ((type(numbers['num1']) is int) and (type(numbers['num2'] is int))):
